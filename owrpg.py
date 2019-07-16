@@ -27,6 +27,10 @@ class Healer:
 
 class Hero(Attack):
     def attack(self, enemy):
+        self.ultimate = 0
+        hhealer.ultimate = 0
+        enemya.ultimate = 0
+        thealer.ultimate = 0
         if choice2 == 'mercy':
             countera = 0
             while countera < 1: 
@@ -387,9 +391,12 @@ class Hero(Attack):
                 self.ultimate = 0
 
     def secondary(self, enemy):
+        self.ultimate = 0
+        hhealer.ultimate = 0
+        enemya.ultimate = 0
+        thealer.ultimate = 0
         if choice1 == 'tracer':
             hhealer.mercyvar = 1
-            print(recall)
             heroa.health = max(recall)
             print("Your health has been restored to " + str(heroa.health))
         elif choice1 == 'soldier':
@@ -744,6 +751,10 @@ class Hero(Attack):
                 print("Your boop was not successful.")
 
     def ultabl(self, enemy):
+        self.ultimate = 0
+        hhealer.ultimate = 0
+        enemya.ultimate = 0
+        thealer.ultimate = 0
         if choice1 == 'tracer':
             newrandom = random.randint(1, (2 + enemya.dodge))
             if newrandom == 1:
@@ -771,7 +782,7 @@ class Hero(Attack):
                             hhealer.mercyvar = 1
                             enemya.health -= self.power
                             if enemya.health <= 0:
-                                print(choice3.capitalize() + " is dead.")
+                                print("Your attack visor connected, and " + choice3.capitalize() + " is dead.")
                                 countera += 1
                                 break
                             else:
@@ -825,7 +836,7 @@ class Hero(Attack):
                             newpower = (self.power + (self.power * hhealer.assist))
                             enemya.health -= newpower
                             if enemya.health <= 0:
-                                print(choice3.capitalize() + " is dead.")
+                                print("Your attack visor connected, and " + choice3.capitalize() + " is dead.")
                                 countera += 1
                                 break
                             else:
@@ -881,7 +892,7 @@ class Hero(Attack):
                     enemya.health -= newpower1
                     # hhealer.ultimate = int((self.power * hhealer.heal)/2)
                     if enemya.health <= 0:
-                        print(choice3.capitalize() + " is dead.")
+                        print("Your attack visor connected, and " + choice3.capitalize() + " is dead.")
                     else:
                         print("You do %d damage." % newpower1)
                         print("You will be healed by %d next turn." % (hhealer.heal))
@@ -943,7 +954,7 @@ class Hero(Attack):
                             if randomrb1 == 1:
                                 enemya.health -= 150
                                 if enemya.health <= 0:
-                                    print(choice3.capitalize() + " is dead.")
+                                    print("Your rocket barrage connected, and " + choice3.capitalize() + " is dead.")
                                     counterp += 1
                                     break
                                 else:
@@ -1044,7 +1055,7 @@ class Hero(Attack):
                                 newrbpower = (150 + (150 * hhealer.assist))
                                 enemya.health -= newrbpower
                                 if enemya.health <= 0:
-                                    print(choice3.capitalize() + " is dead.")
+                                    print("Your rocket barrage connected, and " + choice3.capitalize() + " is dead.")
                                     counterp += 1
                                     break
                                 else:
@@ -1148,7 +1159,7 @@ class Hero(Attack):
                         enemya.health -= newrbpower1
                         # hhealer.ultimate = int((self.power * hhealer.heal)/2)
                         if enemya.health <= 0:
-                            print(choice3.capitalize() + " is dead.")
+                            print("Your rocket barrage connected, and " + choice3.capitalize() + " is dead.")
                         else:
                             print("You do %d damage." % newrbpower1)
                             print("You will be healed by %d next turn." % (hhealer.heal))
@@ -1245,9 +1256,11 @@ class Hero(Attack):
     
     def healult(self, enemy):
         if choice2 == 'mercy':
-            print("Mercy will increase your health by 60 for 15 straight turns.")
+            if self.ultcount > 0:
+                input("Mercy's Valkyrie will provide +60 heals and 30 percent damage boost each turn for %d turn(s). Press ENTER to continue" % self.ultcount)
         if choice2 == 'zen':
-            print("Zenyatta will restore you health by 300 for 6 straight turns.")
+            if self.ultcount > 0:
+                input("Zenyatta's Transcendence will restore your health by 300 for %d turn(s). Press ENTER to continue" % self.ultcount)
 
     def print_status(self):
         print("You have %d health, %d power, %d acc, and %d dodge." % (self.health, self.power, self.accuracy, self.dodge))
@@ -1266,6 +1279,9 @@ class Hero(Attack):
 
 class Talon(Attack):
     def attack(self, enemy):
+        self.ultimate = 0
+        hhealer.ultimate = 0
+        heroa.ultimate = 0
         thealer.ultimate = 0
         randomt = random.randint(1, (enemya.accuracy + heroa.dodge))
         if randomt == 1:
@@ -1290,7 +1306,6 @@ class Talon(Attack):
                     print(choice4.capitalize() + " gained an extra %d ult charge and 4 passive charge." % thealer.ultimate)
                     if choice1 == 'tracer':
                         if choice2 == 'mercy':
-                            print(hhealer.mercyvar)
                             if hhealer.mercyvar == 1:
                                 heroa.health += hhealer.heal
                                 hhealer.ultimate = int(hhealer.heal * 0.20)
@@ -1315,6 +1330,7 @@ class Talon(Attack):
         else:
             print(choice3.capitalize() + " missed.")
             self.ultimate = 0
+            thealer.ultimate = 0
             if thealer.mercyvar == 1:
                 randomta2 = random.randint(1, (heroa.dodge + 1))
                 if randomta2 == 1:
@@ -1455,16 +1471,16 @@ while 1 == 1:
     print("SOLDIER76: 200, 40, 1, 2, Helix Rocket: 120 dmg (enemy dodge + 1) (8 cd), Visor: 100 percent acc of primary fire for 6 straight turns")
     print("PHARAH: 200, 55, 2, 1, Boop: instakill (enemy dodge + 8) (9 cd), Barrage: 150 dmg (enemy dodge + 1) for 3 straight turns."), print("")
     print("SUPPORT: Heal/turn, DMG Assist, Sec, ULT"), print("")
-    print("MERCY: +50, 30%, Resurrect: restores full health to fallen hero (30 cd), Valkyrie: increase to +60 h/t for 15 turns")
-    print("ZENYETTA: +30, 25%, Orb: +48 dmg 1/5 acc (? cd), Transcendence: restores 300 hp for 6 straight turns"), print("")
+    print("MERCY: +50, 30%, Valkyrie: combined +60 h/t and 30 percent damage boost for 15 turns")
+    print("ZENYETTA: +30, 25%, Transcendence: restores 300 hp for 6 straight turns"), print("")
     print("ENEMIES (*Note: Enemies will use Secondary and Ultimate as soon as they are able to."), print("")
     print("ATTACK:"), print("")
     print("REAPER: 250, 90, 1, 1, Wraith Form: cannot give or take dmg for 3 straight turns but receives healing (8 cd), Death Blossom: deals 170 dmg for 3 straight turns")
     print("JUNKRAT: 200, 50, 2, 1, Steel Trap: (varied probability) acc drops to 1 for 4 straight turns (10 cd), Riptire: 600 dmg 1/2 acc")
     print("WIDOWMAKER: 200, 120 bs 200 hs, 3, 2, Grapple: rest one turn and restore health (10 cd), Infra-Sight: increase acc 1/2 bs 1/4 hs for 15 turns"), print("")
     print("SUPPORT (*Note: Enemy healers will always attack until healing is required):"), print("")
-    print("BAPTISTE: +60 (enemy dodge + 1), +75 dmg (hero dodge + 1), Immortality Field: prevents enemy health from dropping below 20 percent for 8 turns (20 cd), Amp Matrix: dmg assist increased to 40 percent for 4 turns")
-    print("ANA: +75 (enemy dodge + 1), +70 dmg (hero dodge + 1), Sleep Dart: guarantees enemy 1/1 acc for one turn (12 cd), Nano Boost: restores enemy health full, 50 percent dmg assist, and hero dmg reduced 50 percent for 8 turns")
+    print("BAPTISTE: +60 (enemy dodge + 1), +75 dmg (hero dodge + 1), Amp Matrix: dmg assist increased to 40 percent for 4 turns")
+    print("ANA: +75 (enemy dodge + 1), +70 dmg (hero dodge + 1), Nano Boost: restores enemy health full, 50 percent dmg assist, and hero dmg reduced 50 percent for 8 turns")
     while 1 == 1:
         cont = input("Press ENTER to continue")
         break
@@ -1622,6 +1638,8 @@ while heroa.alive() and enemya.alive():
             while 1 == 1:
                 user_input3 = input("Use heal ult? ('Y' or 'N'): ").lower()
                 if user_input3 == 'y':
+                    mercy.ultcount = 15
+                    zen.ultcount = 6
                     heroa.healult(enemya)
                     healult = 0
                     break

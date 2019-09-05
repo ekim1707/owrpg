@@ -1473,7 +1473,7 @@ while 1 == 1:
     print("SUPPORT: Heal/turn, DMG Assist, Sec, ULT"), print("")
     print("MERCY: +50, 30%, Valkyrie: combined +60 h/t and 30 percent damage boost for 15 turns")
     print("ZENYETTA: +30, 25%, Transcendence: restores 300 hp for 6 straight turns"), print("")
-    print("ENEMIES (*Note: Enemies will use Secondary and Ultimate as soon as they are able to."), print("")
+    print("ENEMIES (*Note: Enemies will use Secondary and Ultimate as soon as they are able to)"), print("")
     print("ATTACK:"), print("")
     print("REAPER: 250, 90, 1, 1, Wraith Form: cannot give or take dmg for 3 straight turns but receives healing (8 cd), Death Blossom: deals 170 dmg for 3 straight turns")
     print("JUNKRAT: 200, 50, 2, 1, Steel Trap: (varied probability) acc drops to 1 for 4 straight turns (10 cd), Riptire: 600 dmg 1/2 acc")

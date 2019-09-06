@@ -43,9 +43,9 @@ class Attack:
             return False
         else:
             return True
-  ```
+```
   Use of Classes and Class constructors.
-  ```
+```
 while heroa.alive() and enemya.alive():
 print(choice3.capitalize() + " will now attack. Ults will be used when possible, and sec abilities will be used as appropriate.")
 user_input2 = input("Press ENTER to continue.")
@@ -60,5 +60,5 @@ if choice3 == 'reaper':
         thealult += (4 + thealer.ultimate)
         cooldowne += 1
         break
-  ```
+```
   An example of how managing ultimates works.

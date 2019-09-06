@@ -50,13 +50,6 @@ while heroa.alive() and enemya.alive():
 print(choice3.capitalize() + " will now attack. Ults will be used when possible, and sec abilities will be used as appropriate.")
 user_input2 = input("Press ENTER to continue.")
 if choice3 == 'reaper':
-    # if ulte == 100:
-    #     enemya.ult(heroa)
-    #     cooldowne += 1
-    # elif enemya.health < heroa.power:
-    #     if cooldowne = 8:
-    #         enemya.secondary(heroa)
-    #         cooldowne = 0
     if 1 == 2:
         pass
     else:
@@ -68,4 +61,4 @@ if choice3 == 'reaper':
         cooldowne += 1
         break
   ```
-  An example of how managing enemy ultimates worked.
+  An example of how managing ultimates works.

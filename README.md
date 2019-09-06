@@ -28,4 +28,44 @@ The greatest challenge was managing massive lines of codes. At this point in our
 
 ## Code Examples
 ---
-
+```
+class Attack:
+    def __init__(self, health, power, accuracy, dodge, ultimate, ultcount):
+        self.health = health
+        self.power = power
+        self.accuracy = accuracy
+        self.dodge = dodge
+        self.ultimate = ultimate
+        self.ultcount = ultcount
+    
+    def alive(self):
+        if self.health <= 0:
+            return False
+        else:
+            return True
+  ```
+  Use of Classes and Class constructors.
+  ```
+while heroa.alive() and enemya.alive():
+print(choice3.capitalize() + " will now attack. Ults will be used when possible, and sec abilities will be used as appropriate.")
+user_input2 = input("Press ENTER to continue.")
+if choice3 == 'reaper':
+    # if ulte == 100:
+    #     enemya.ult(heroa)
+    #     cooldowne += 1
+    # elif enemya.health < heroa.power:
+    #     if cooldowne = 8:
+    #         enemya.secondary(heroa)
+    #         cooldowne = 0
+    if 1 == 2:
+        pass
+    else:
+        enemya.attack(heroa)
+        ulth += 4
+        healult += (4 + hhealer.ultimate)
+        ulte += (4 + enemya.ultimate)
+        thealult += (4 + thealer.ultimate)
+        cooldowne += 1
+        break
+  ```
+  An example of how managing enemy ultimates worked.

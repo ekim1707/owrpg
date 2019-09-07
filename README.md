@@ -13,7 +13,7 @@ Hello. This was my first solo-project in coding that I worked on separately from
 ## What It Is
 This is a derivative of the RPG game exercise that we did in class as a class exercise. I thought the template that the bootcamp gave for the RPG game exercise would be a good fit with the video game Overwatch, so I thought it would be interesting and challenging to try to combine the two.
 
-## What We Used
+## What I Used
   * Python3
 
 ## Challenges

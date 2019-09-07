@@ -44,7 +44,7 @@ class Attack:
         else:
             return True
 ```
-  Use of Classes and Class constructors.
+  Use of classes and class constructors.
 ```
 while heroa.alive() and enemya.alive():
 print(choice3.capitalize() + " will now attack. Ults will be used when possible, and sec abilities will be used as appropriate.")

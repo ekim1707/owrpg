@@ -62,3 +62,5 @@ if choice3 == 'reaper':
         cooldowne += 1
         break
 ```
+## Contributors 
+* Eugene Kim: https://github.com/ekim1707 

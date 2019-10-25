@@ -27,7 +27,6 @@ The greatest challenge was managing massive lines of codes. At this point in our
 [Github](https://github.com/ekim1707/owrpg)
 
 ## Code Examples
----
   Use of classes and class constructors:
 ```
 class Attack:
